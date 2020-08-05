@@ -326,17 +326,25 @@ nav ul li a {
     }
 
     .scroll{
+        margin: -9em auto 7em auto;
         width: 30px;
         animation: move 0.5s infinite alternate;
     }
 
     @keyframes move {
         0% {
-            transform: translateY(0px);
+            transform: translateY(20px);
         }
 
         100% {
-            transform: translateY(20px);
+            transform: translateY(0px);
         }
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .server{
+        width: 40%;
+        margin: 5em auto 4em 15%;
     }
 }
