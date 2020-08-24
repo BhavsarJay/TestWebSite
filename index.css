@@ -263,42 +263,84 @@ body{
 
 
 .main-container{
-    margin-top: 500px;
+    margin: 50vh 0;
     width: 100%;
     display: flex;
+    justify-content: space-evenly;
 }
 
-.img-container{
-    margin: 50px;
-    width: 33.33%;
+
+.card-container{
+    /* margin: 0 50px; */
+    width: 25%;
     height: 750px;
     overflow: hidden;
-    opacity: 60%;
+    position: relative;
 }
 
-.img-wrapper{
+
+.card-container > .img-wrapper{
     width: 100%;
     height: 100%;
-    /* transform: scale(1.3); */
     /* background-color: lawngreen; */
     background-repeat: no-repeat;
-    background-position-x: center;
+    background-position: center center;
+    /* background-size: 750px calc(750px * 1.5); */
+    opacity: 40%;
 }
 
-.story-img-1{
-    background-image: url('Our-Story.jpg');
+#story-card-1 > .img-wrapper{
+    background-image: url('Our-Story1.jpg');
+    background-size: 750px auto;
+    background-position: bottom center;
 }
 
-.story-img-2{
-    background-image: url('Our-Services.jpg');
+#story-card-2 > .img-wrapper{
+    background-image: url('Our-Services1.jpg');
+    background-size: calc(750px * 1.5);
+    background-position: top left;
 }
 
-.story-img-3{
-    background-image: url('Our-Goals.jpg');
+#story-card-3 > .img-wrapper{
+    background-image: url('Our-Goals1.jpg');
+    background-size: 750px auto;
+    background-position-y: top;
 }
 
-.img-container:hover {
-    opacity: 100%;
+
+.card-container > .text-wrapper{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35vw;
+    height: inherit;
+    /* background-color: rgba(0, 0, 0, 0.185); */
+}
+
+.card-container > .text-wrapper > h1{
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Montserrat';
+    color: rgb(255, 255, 255);
+    position: relative;
+    top: 200px;
+    /* color: black; */
+}
+
+
+.card-container > .text-wrapper > p{
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Poppins';
+    color: rgb(255, 255, 255);
+    position: relative;
+    top: 200px;
+    opacity: 0%;
+}
+
+#story-card-2 > .text-wrapper > p{
+    color: black;
 }
 
 /* #endregion Story Page Styling */
@@ -325,6 +367,7 @@ body{
 
 .team-img-container > .img-wrapper{
     position: relative;
+    top: 50vh;
 }
 
 .team-img-container > .img-wrapper > img{
