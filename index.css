@@ -337,6 +337,7 @@ body{
     position: relative;
     top: 200px;
     opacity: 0%;
+    display: none;
 }
 
 #story-card-2 > .text-wrapper > p{
