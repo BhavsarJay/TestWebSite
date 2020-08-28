@@ -21,7 +21,7 @@ var myAnimation = new hoverEffect({
   image1: 'Projectimg1.png',
   image2: 'Projectimg3.png',
   imagesRatio: 1080/1150,
-  displacementImage: 'https://res.cloudinary.com/therealsk/image/upload/v1593860931/heightMap_jjb5ng.png'
+  displacementImage: 'distortion1.png'
 });
 
 // console.log(typeof(myAnimation));
@@ -32,6 +32,9 @@ var windowHeight = $(window).height();
 var imgIndex = 0;
 var centreOfScreen;
 var scrolledFromtop = 0;
+var codevengers_SVG = $('#scaleImg');
+var matrixRegex = /matrix\(\s*1,\s*0,\s*0,\s*1,\s*(-?\d*\.?\d+),\s*(-?\d*\.?\d+)\)/,
+matches = codevengers_SVG.css('transform').match(matrixRegex);
 
 jQuery(window).scroll(function(){
   
@@ -53,13 +56,28 @@ jQuery(window).scroll(function(){
     }
   }
 
-
   parallaxScroll(scrolledFromtop);
+
+// Take WIDTH instead u dumbass
+
+  var matrixRegex = /matrix\(\s*1,\s*0,\s*0,\s*1,\s*(-?\d*\.?\d+),\s*(-?\d*\.?\d+)\)/,
+    matches = codevengers_SVG.css('transform').match(matrixRegex);
+
+  _Xval = Number(matches[1]);
+  // console.log(matches[0])
+  if(_Xval < -30000){
+    codevengers_SVG.css('visibility', 'hidden');
+    console.log('hide');
+  }
+  else{
+    codevengers_SVG.css('visibility', 'visible');
+    console.log('show');
+  }
 });
 
 function parallaxScroll(scrolled){
   $('.background-text-items').css('top',(0 + (scrolled * 0.5)) + 'px');
-  $('.bg-texts-container').css('top',(-200 + (scrolled * 0.5)) + 'px');
+  $('.bg-texts-container').css('top',(-200 + (scrolled * 0.4)) + 'px');
 }
 
 var storyImg2 = $('#story-card-2');
@@ -148,7 +166,7 @@ function openCard(cardIndex){
   var para_animation = anime({
     targets: para,
     opacity: [0, 1],
-    top: 180,
+    top: '-=30',
     easing: 'easeInOutExpo',
     delay: 250,
     begin: function(anim){
@@ -178,6 +196,9 @@ function closeCard(cardIndex){
     scale: 1,
     easing: 'easeInOutExpo',
     delay: 250,
+    complete: function(anim){
+      mouseLeave(cardIndex)
+    }
   });
 
   var headingText = imgs[cardIndex][0].children[1].children[0];
@@ -193,12 +214,11 @@ function closeCard(cardIndex){
   var para_animation = anime({
     targets: para,
     opacity: [1, 0],
-    top: 200,
+    top: '+=30',
     easing: 'easeInOutExpo',
     // delay: 250
     complete: function(anim){
       para.style.display = "none";
-      mouseLeave(cardIndex);
     }
   });
 
