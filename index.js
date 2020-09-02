@@ -3,12 +3,20 @@
 // Scrollbar.init(document.querySelector('#my-scrollbar'));
 // var Scrollbar = window.Scrollbar;
 
+
 //For Skrollr
-var s = skrollr.init([easing = 'linear']);
-skrollr.init({
-  smoothScrolling: true,
-  easing: "linear"
-})
+// function detectMob() {
+//   return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 800 ) );
+// }
+// console.log(detectMob());
+  
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+console.log(isMobile);
+if (!isMobile) {
+  // var s = skrollr.init([easing = 'linear']);
+  var s = skrollr.init();
+  console.log('On Desktop');
+}
 
 var myAnimation = new hoverEffect({
   parent: document.querySelector('.distortion'),
@@ -20,7 +28,7 @@ var myAnimation = new hoverEffect({
   hover: false,
   image1: 'Projectimg1.png',
   image2: 'Projectimg3.png',
-  imagesRatio: 1080/1150,
+  // imagesRatio: 1080/1150,
   displacementImage: 'distortion1.png'
 });
 
@@ -37,7 +45,6 @@ var matrixRegex = /matrix\(\s*1,\s*0,\s*0,\s*1,\s*(-?\d*\.?\d+),\s*(-?\d*\.?\d+)
 matches = codevengers_SVG.css('transform').match(matrixRegex);
 
 jQuery(window).scroll(function(){
-  
   scrolledFromtop = $(window).scrollTop();
   centreOfScreen = scrolledFromtop + windowHeight;
 
@@ -45,21 +52,20 @@ jQuery(window).scroll(function(){
     if(imgIndex != 2){
       myAnimation.next();
       imgIndex = 2;
-      console.log("Change To 2nd");
+      // console.log("Change To 2nd");
     }
   }
   else if(centreOfScreen > text1.offset().top + text1.height()/2){
     if(imgIndex != 1){
       myAnimation.previous();
       imgIndex = 1;
-      console.log("Change To 1st");
+      // console.log("Change To 1st");
     }
   }
 
   parallaxScroll(scrolledFromtop);
 
-// Take WIDTH instead u dumbass
-
+  // Take WIDTH instead u dumbass
   var matrixRegex = /matrix\(\s*1,\s*0,\s*0,\s*1,\s*(-?\d*\.?\d+),\s*(-?\d*\.?\d+)\)/,
     matches = codevengers_SVG.css('transform').match(matrixRegex);
 
@@ -67,17 +73,17 @@ jQuery(window).scroll(function(){
   // console.log(matches[0])
   if(_Xval < -30000){
     codevengers_SVG.css('visibility', 'hidden');
-    console.log('hide');
+    // console.log('hide');
   }
   else{
     codevengers_SVG.css('visibility', 'visible');
-    console.log('show');
+    // console.log('show');
   }
 });
 
 function parallaxScroll(scrolled){
   $('.background-text-items').css('top',(0 + (scrolled * 0.5)) + 'px');
-  $('.bg-texts-container').css('top',(-200 + (scrolled * 0.4)) + 'px');
+  $('.bg-texts-container').css('top',(0 + (scrolled * 0.4)) + 'px');
 }
 
 var storyImg2 = $('#story-card-2');

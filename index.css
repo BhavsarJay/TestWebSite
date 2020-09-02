@@ -8,9 +8,9 @@ body{
     height: 100vh;
 }
 
-/* #region NavBar styling*/
+/* #region NavBar styling */
 .navbar{
-    padding: 2em;
+    padding: 30px;
 }
 
 .right-side{
@@ -23,13 +23,43 @@ body{
 }
 
 .navbar-text-wrapper{
-    margin-right: 5em;
+    margin-right: 7%;
 }
 
 .navbar-text-wrapper a{
     text-decoration: none;
     color: #cccccc;
     font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 425px){
+    .desktop{
+        display: none;
+    }
+
+    .navbar{
+        padding-top: 15px;
+        padding-right: 15px;
+    }
+
+    .hamburger-menu{
+        /* float: right; */
+        width: fit-content;
+        margin-left: auto;
+    }
+
+    .hamburger-menu div{
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 6px 0;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    .navbar-text-wrapper a{
+        font-size: 1.2em;
+    }
 }
 
 /* #endregion Navbar styling */
@@ -55,6 +85,16 @@ body{
 
 .codevengers-text-wrapper h1{
     animation: headerAnimation 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards 0.3s;
+}
+
+@media screen and (max-width: 425px){
+    .codevengers-text-container{
+        margin-top: 10%;
+    }
+
+    .codevengers-text-wrapper h1{
+        font-size: 2.5em;
+    }
 }
 
 @media screen and (min-width: 1500px){
@@ -95,7 +135,7 @@ body{
 /*THE*/
 #the1{
     color: #2B2B2B;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 14em;
     top: 2vh;
@@ -105,7 +145,8 @@ body{
 /* HUSTLE */
 #hustle{
     color: #222222;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     font-size: 10em;
     /* top: 8.5vh; */
     /* left: 50vw; */
@@ -140,12 +181,45 @@ body{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #404040;
 }
+
+@media screen and (max-width: 425px){
+    #the1{
+        font-size: 10em;
+        position: absolute;
+        top: 5vh;
+        left: 25vw;
+    }
+    #hustle{
+        font-size: 5em;
+        top: 28vh;
+        right: 0;
+    }
+    #the2{
+        font-size: 10em;
+        top: 35vh;
+        left: 25vw;
+    }
+    #grind{
+        font-size: 6em;
+        bottom: 27vh;
+        right: -7vw;
+    }
+}
+
+@media screen and (min-width: 1500px){
+    
+    #the1{font-size: 16em;}
+    #hustle{font-size: 11em;}
+    #the2{font-size: 19.5em;}
+    #grind{font-size: 18em;}
+}
+
 /*#endregion Background Text Styling  */
 
 /* #region See-our-work styling */
 .see-our-work{
     width: fit-content;
-    margin-left: 8%;
+    margin-left: 5%;
     position: absolute;
     bottom: 10vh;
 }
@@ -176,25 +250,24 @@ body{
     width: 70%;
 }
 
-
 .ourworkcontent-text-wrapper > p{
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
     /* white-space: nowrap; */
     color: #cccccc;
 }
-/* #endregion See out work styling */
+
+@media screen and (max-width: 425px){
+    .see-our-work > .heading-text-wrapper a{
+        font-size: 1.4em;
+    }
+    .ourworkcontent-text-wrapper > p{
+        font-size: 1em;
+    }
+}
 
 @media screen and (min-width: 1500px){
-    .navbar-text-wrapper a{
-        font-size: 1.2em;
-    }
-
-    #the1{font-size: 16em;}
-    #hustle{font-size: 11em;}
-    #the2{font-size: 19.5em;}
-    #grind{font-size: 18em;}
-
+    
     .see-our-work > .heading-text-wrapper a{
         font-size: 2.5em;
     }
@@ -202,6 +275,8 @@ body{
         font-size: 1.4em;
     }
 }
+
+/* #endregion See out work styling */
 
 /* #region Projects Page Styling */
 .project-body{
@@ -216,6 +291,7 @@ body{
     grid-template-columns: 1fr 1fr;
     /* Not Sure About This 170vh */
     grid-auto-rows: 170vh;
+    /* background-color: lightslategray; */
 }
 
 .text-grid{
@@ -290,6 +366,55 @@ body{
     background-size: cover;
     background-position:center; */
 }
+
+@media screen and (max-width: 425px){
+
+    .grid-wrapper.desktop{
+        display: none;
+    }
+
+    .grid-wrapper.mobile{
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    /* .grid-wrapper.mobile{
+    background-color: rgb(66, 66, 66);
+    }
+
+    .project-image-conatiner{
+        border: 2px solid violet;
+    }
+
+    .project-text-wrapper{
+        border: 2px solid violet;
+    } */
+
+    .grid-wrapper.mobile > .project-image-conatiner > #sticky-item{
+        position: static;
+        width: 150px;
+        height: 150px;
+    }
+
+    .grid-wrapper.mobile > .text-2{
+        text-align: right;
+    }
+
+    .project-text-wrapper{
+        font-size: 0.7em;
+        text-align: left;
+        line-height: 1.7em;
+    }
+
+    .bg-text-wrapper{
+        font-size: 6em;
+        margin-right: 0;
+    }
+}
+
 
 /* #endregion Projects Page Styling */
 
@@ -382,7 +507,7 @@ body{
 
 /* #endregion Story Page Styling */
 
-/* #region Team Page */
+/* #region Team Page Styling */
 
 .team-page{
     height: 600vh;
@@ -396,7 +521,7 @@ body{
 }
 
 .team-img-container{
-    position: relative;
+    position: absolute;
     width: calc(100vw - 17px);
     height: 100vh;
     overflow: hidden;
@@ -419,24 +544,37 @@ body{
 }
 
 /* Profiles Styling */
-.profile-container{
+.profiles-container{
     position: absolute;
+    width: 100%;
+    height: 100%;
+    /* margin: 0 auto; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
 }
+
+
+/* .profile-container{
+    border: 1px solid white;
+} */
 
 .profile-img-wrapper{
-    width: 19.5vw;
-    height: 19.5vw;
+    width: 15vw;
+    height: 15vw;
+    margin: 0 auto;
+    padding: 0px;
+    box-sizing: border-box;
     border-radius: 50%;
-    margin: 0;
-    padding: 0;
     background-repeat: no-repeat;
     background-position: center center;
-    /* background-blend-mode: lighten; */
+    background-size: cover;
 }
 
-.profile-img-wrapper:focus{
+/* .profile-img-wrapper:focus{
     border-radius: 0%;
-}
+} */
 
 #m1{
     top: 0%;
@@ -479,20 +617,20 @@ body{
     left: 80%;
 }
 
-#m1 > div{background-image: url(ProfileImages/Darshan.jpg); background-size: cover;}
-#m2 > div{background-image: url(ProfileImages/Dheeraj.jpg); background-size: cover;}
-#m3 > div{background-image: url(ProfileImages/Mihika.jpg); background-size: cover;}
-#m4 > div{background-image: url(ProfileImages/Jayk.jpg); background-size: cover;}
-#m5 > div{background-image: url(ProfileImages/Meet.jpg);background-size: cover;}
-#m6 > div{background-image: url(ProfileImages/Jayb.jpg);background-size: cover;}
-#m7 > div{background-image: url(ProfileImages/Parth.jpg); background-size: cover;}
-#m8 > div{background-image: url(ProfileImages/Rohit.jpg);background-size: cover;}
-#m9 > div{background-image: url(ProfileImages/Shyren.jpg);background-size: cover;}
-#m10 > div{background-image: url(ProfileImages/Varun.jpg);background-size: cover;}
+#m1 > div{background-image: url(ProfileImages/Darshan.jpg);}
+#m2 > div{background-image: url(ProfileImages/Dheeraj.jpg);}
+#m3 > div{background-image: url(ProfileImages/Mihika.jpg);}
+#m4 > div{background-image: url(ProfileImages/Jayk.jpg);}
+#m5 > div{background-image: url(ProfileImages/Meet.jpg)}
+#m6 > div{background-image: url(ProfileImages/Jayb.jpg)}
+#m7 > div{background-image: url(ProfileImages/Parth.jpg);}
+#m8 > div{background-image: url(ProfileImages/Rohit.jpg)}
+#m9 > div{background-image: url(ProfileImages/Shyren.jpg)}
+#m10 > div{background-image: url(ProfileImages/Varun.jpg)}
 
-/* #endregion Team Page */
+/* #endregion*/
 
-/* #region Contact Page */
+/* #region Contact Page Styling */
 .contact-page{
     height: 100vh;
 }
