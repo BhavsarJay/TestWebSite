@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="skrollr-body">
 
     <div class="navbar">
         <div class="right-side desktop">
@@ -44,7 +44,10 @@
             </div>
         </div>
 
-        <div class="background-text-items">
+        <div class="background-text-items"
+        data-start="transform: translate(0, 0%);"
+        data-1000="transform: translate(0, 70%);"
+        >
             <div class="back-text-wrapper" id="the1">
                 THE
             </div>
@@ -75,7 +78,10 @@
     <div class="project-body">
 
         <div class="bg-texts-container">
-            <div class="bg-text-wrapper">
+        <div class="bg-text-wrapper"
+        data--100-bottom-top="transform: translate(0, 0%);"
+        data--100-top-bottom="transform: translate(0, 120%);"
+        >
                 OUR <br> WORK
             </div>
         </div>
@@ -261,8 +267,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r119/three.min.js" integrity="sha512-E1+SnTWyHYoY5MN8wpL0SI4TYbpWN12sHXyEViwbzzEyq6GHxQrPFDzEeUDab4emXcf3Yj41Tht2JZnpo3kjwA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js" integrity="sha512-LfB+BcvR3zBt7ebVskhSWiSbEUiG3p5EcCprkieldsKhBeR6wpnLi0VpWC2GNgVGWP2n/skO8Bx2oKNjUhXCkw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js" integrity="sha512-A2+khatRDWHUE2VUtN4xUTkr1nc4YfDBw9Sg3ea6x0aRPfpcYieDZji4D2edDHy/yF5NsYzP7kL8sSM8s5EqCw==" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript" src="skrollr.min.js"></script> -->
     <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="jquery-mobile.js"></script>
+    <!-- <script type="text/javascript" src="skrollr.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.1/jquery.mobile.min.js" integrity="sha512-wSacGPS/KRyVB67O4xD+Eh1OX4/dq4juZj9DKTokRt81BzLbfsSMtNgR9Pu8FLr4kLbk5oNr9Hq+5PeWLCX8mA==" crossorigin="anonymous"></script> -->
     <script src="hover-effect.umd.js"></script>
     <script src="smooth-scrollbar.js"></script>
     <script src="index.js"></script>

@@ -12,9 +12,12 @@
   
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 console.log(isMobile);
-if (!isMobile) {
-  // var s = skrollr.init([easing = 'linear']);
-  var s = skrollr.init();
+if (!isMobile || true) {
+  var s = skrollr.init({
+    smoothScrolling: false,
+    smoothScrollingDuration: 500,
+    easing: 'linear'
+  });
   console.log('On Desktop');
 }
 
@@ -63,7 +66,7 @@ jQuery(window).scroll(function(){
     }
   }
 
-  parallaxScroll(scrolledFromtop);
+  // parallaxScroll(scrolledFromtop);
 
   // Take WIDTH instead u dumbass
   var matrixRegex = /matrix\(\s*1,\s*0,\s*0,\s*1,\s*(-?\d*\.?\d+),\s*(-?\d*\.?\d+)\)/,
@@ -80,6 +83,18 @@ jQuery(window).scroll(function(){
     // console.log('show');
   }
 });
+
+// var isScrolling = false;
+// $(document).on('scrollstart', function(){
+//   isScrolling = true;
+//   console.log(isScrolling);
+// });
+// $(document).on('scrollstop', function(){
+//   isScrolling = false;
+//   console.log(isScrolling);
+// });
+
+
 
 function parallaxScroll(scrolled){
   $('.background-text-items').css('top',(0 + (scrolled * 0.5)) + 'px');
