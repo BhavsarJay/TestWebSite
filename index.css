@@ -173,8 +173,11 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 15em;
-    top: 55vh;
-    left: 0vw;
+    /* top: 55vh; */
+    /* left: 40vw; */
+    bottom: -2vh;
+    right: -3vw;
+
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #404040;
 }
@@ -198,7 +201,7 @@ body{
     }
     #grind{
         font-size: 6em;
-        bottom: 27vh;
+        top: 55vh;
         right: -7vw;
     }
 }
