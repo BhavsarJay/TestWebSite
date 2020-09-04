@@ -173,11 +173,8 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 15em;
-    /* top: 55vh; */
-    /* left: 40vw; */
-    bottom: -2vh;
-    right: -3vw;
-
+    top: 55vh;
+    left: 0vw;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #404040;
 }
@@ -553,6 +550,9 @@ body{
         transform: none;
         box-sizing: border-box;
         padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .card-container > .text-wrapper > h1{
@@ -566,7 +566,6 @@ body{
         line-height: 2em;
         text-align: justify;
         top: 0;
-        margin-top: 50%;
         display: block;
         opacity: 80%;
     }
@@ -645,6 +644,34 @@ body{
     background-size: cover;
 }
 
+@media screen and (max-width: 425px){
+
+    .team-page{
+        height: 120vh;
+    }
+
+    .team-page-content{
+        position: initial;
+    }
+
+    .team-img-container{
+        display: none;
+    }
+
+    .profiles-container{
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .profile-img-wrapper{
+        width: 30vw;
+        height: 35vw;
+        border-radius: 0;
+    }
+
+
+}
+
 /* .profile-img-wrapper:focus{
     border-radius: 0%;
 } */
@@ -704,10 +731,14 @@ body{
 /* #endregion*/
 
 /* #region Contact Page Styling */
+
 .contact-page{
     height: 100vh;
 }
 
+.contact-page.mobile{
+    display: none;
+}
 .content-container{
     height: 100%;
     background-color: #e3edf7;
@@ -813,7 +844,6 @@ textarea:focus{
     background-color: rgb(66, 66, 66);
 }
 
-
 .contact-page> .content-container> .img-container{
     /* background-color: violet; */
     /* height: 80%; */
@@ -861,6 +891,79 @@ textarea:focus{
                 0.5px 0.5px 0px rgba(0,0,0,0.15),
                 0px 12px 10px -10px rgba(0,0,0,0.05);
     transform: scale(0.96);
+}
+
+@media screen and (max-width: 425px){
+
+    .contact-page{
+        display: none;
+        height: auto;
+    }
+    .contact-page.mobile{
+        display: block;
+    }
+
+    .content-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-container > .heading-container{
+        margin: 10% 0;
+    }
+
+    .content-container > .heading-container h1{
+        font-size: 1.9em;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    .content-container > .img-wrapper > p{
+        font-size: 1em;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        position: absolute;        
+        left: 18vw;
+    }
+
+    .content-container > .img-wrapper > img{
+        width: 100vw;
+    }
+
+    .form-container{
+        width: 90%;
+        margin: 10% auto;
+    }
+
+    .form-container > form{
+        margin: 0 auto;
+    }
+
+    .form-container > form > label:nth-child(n){
+        width: 100%;
+    }
+
+    .social-media-links-container > .img-container{
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .social-media-links-container h3{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.8em;
+        font-weight: 500;
+    }
+
+    .social-media-links-container img{
+        width: 50px;
+        height: 50px;
+        margin: 0 -5px;
+        box-shadow: none;
+        transition: none;
+    }
 }
 
 /* #endregion Contact Page */

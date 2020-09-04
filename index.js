@@ -48,6 +48,11 @@ var matrixRegex = /matrix\(\s*1,\s*0,\s*0,\s*1,\s*(-?\d*\.?\d+),\s*(-?\d*\.?\d+)
 matches = codevengers_SVG.css('transform').match(matrixRegex);
 
 jQuery(window).scroll(function(){
+
+  if(isMobile){
+    return;
+  }
+
   scrolledFromtop = $(window).scrollTop();
   centreOfScreen = scrolledFromtop + windowHeight;
 
