@@ -373,6 +373,11 @@ body{
 
 @media screen and (max-width: 425px){
 
+    .project-body{
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
     .grid-wrapper.desktop{
         display: none;
     }
@@ -397,10 +402,20 @@ body{
         border: 2px solid violet;
     } */
 
-    .grid-wrapper.mobile > .project-image-conatiner > #sticky-item{
+    .grid-wrapper.mobile > .project-image-conatiner > .project-image-wrapper{
         position: static;
         width: 150px;
         height: 150px;
+    }
+
+    .project-image-conatiner.img-1 > .project-image-wrapper{
+        background-image: url(Projectimg1.png);
+        background-size: cover;
+    }
+
+    .project-image-conatiner.img-2 > .project-image-wrapper{
+        background-image: url(Projectimg3.png);
+        background-size: cover;
     }
 
     .grid-wrapper.mobile > .text-2{
@@ -440,7 +455,6 @@ body{
     overflow: hidden;
     position: relative;
 }
-
 
 .card-container > .img-wrapper{
     width: 100%;
@@ -494,7 +508,6 @@ body{
 
 
 .card-container > .text-wrapper > p{
-    text-align: center;
     font-size: 1em;
     font-family: 'Poppins', sans-serif;
     color: rgb(255, 255, 255);
@@ -508,6 +521,62 @@ body{
     color: black;
     top: 300px;
 }
+
+@media screen and (max-width: 425px){
+    .main-container{
+        margin-top: 150px;
+        margin-bottom: 150px;
+        display: block;   
+    }
+
+    .card-container{
+        width: 80%;
+        height: 90vh;
+        margin: 100px auto;
+    }
+
+    #story-card-1 > .img-wrapper{
+        background-size: cover;
+    }
+    #story-card-2 > .img-wrapper{
+        background-size: cover;
+    }
+    #story-card-3 > .img-wrapper{
+        background-size: cover;
+    }
+
+    .card-container > .text-wrapper{
+        width: 100%;
+        /* height: auto; */
+        /* position: absolute; */
+        left: 0;
+        transform: none;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .card-container > .text-wrapper > h1{
+        font-size: 2em;
+        top: 0px;
+        position: initial;
+    }
+
+    .card-container > .text-wrapper > p{
+        font-size: 0.8em;
+        line-height: 2em;
+        text-align: justify;
+        top: 0;
+        margin-top: 50%;
+        display: block;
+        opacity: 80%;
+    }
+
+    #story-card-2 > .text-wrapper > p{
+        top: 0;
+        color: white;
+    }
+}
+
 
 /* #endregion Story Page Styling */
 

@@ -110,13 +110,14 @@ var openStory = -1;
 var imgs = [storyImg1, storyImg2, storyImg3];
 var animProgress = 100;
 
-storyImg1.click(function(){expandItem(0);});
-storyImg2.click(function(){expandItem(1);});
-storyImg3.click(function(){expandItem(2);});
-
-storyImg1.hover(function(){mouseEnter(0);}, function(){mouseLeave(0);});
-storyImg2.hover(function(){mouseEnter(1);}, function(){mouseLeave(1);});
-storyImg3.hover(function(){mouseEnter(2);}, function(){mouseLeave(2);});
+if(!isMobile){
+  storyImg1.click(function(){expandItem(0);});
+  storyImg2.click(function(){expandItem(1);});
+  storyImg3.click(function(){expandItem(2);});
+  storyImg1.hover(function(){mouseEnter(0);}, function(){mouseLeave(0);});
+  storyImg2.hover(function(){mouseEnter(1);}, function(){mouseLeave(1);});
+  storyImg3.hover(function(){mouseEnter(2);}, function(){mouseLeave(2);});
+}
 
 
 function expandItem(cardIndex){
@@ -180,7 +181,7 @@ function openCard(cardIndex){
     top: 60,
     color: '#000',
     easing: 'easeInOutExpo',
-    // delay: 250
+    delay: 0
   });
 
   var para = imgs[cardIndex][0].children[1].children[1];
