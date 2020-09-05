@@ -228,11 +228,13 @@ body{
     width: fit-content;
 }
 
-.see-our-work > .heading-text-wrapper a{
+.see-our-work > .heading-text-wrapper h1{
     font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
     text-decoration: none;
     color: #cccccc;
     font-size: 2em;
+    margin: 0;
 }
 
 .line-container{
@@ -240,10 +242,6 @@ body{
 	width: initial;
     height: 3px;
     transition: width 0.2s;
-}
-
-.see-our-work > .heading-text-wrapper a:hover ~ .line-container{
-    width: 0;
 }
 
 .ourworkcontent-text-wrapper{

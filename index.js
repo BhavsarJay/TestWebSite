@@ -89,6 +89,19 @@ jQuery(window).scroll(function(){
   }
 });
 
+//NavBar links animations
+$('.navbar-text-wrapper a').click(function(event) {
+  var id = $(this).attr("href");
+  var offset = -50;
+  var target = $(id).offset().top - offset;
+  $('html, body').animate({
+      scrollTop: target
+  }, 1000);
+  event.preventDefault();
+  console.log((id));
+});
+
+
 // var isScrolling = false;
 // $(document).on('scrollstart', function(){
 //   isScrolling = true;
