@@ -12,7 +12,7 @@
   
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 console.log(isMobile);
-if (!isMobile || true) {
+if (!isMobile) {
   var s = skrollr.init({
     smoothScrolling: false,
     smoothScrollingDuration: 500,

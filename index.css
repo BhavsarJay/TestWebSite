@@ -221,7 +221,7 @@ body{
     width: fit-content;
     margin-left: 5%;
     position: absolute;
-    bottom: 10vh;
+    top: 75vh;
 }
 
 .see-our-work > .heading-text-wrapper{
@@ -655,6 +655,7 @@ body{
 
     .team-page-content{
         position: initial;
+        overflow: initial;
     }
 
     .team-img-container{
