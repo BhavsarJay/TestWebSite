@@ -30,7 +30,7 @@ var myAnimation = new hoverEffect({
   speedOut: 1,
   hover: false,
   image1: 'Projectimg1.png',
-  image2: 'Projectimg3.png',
+  image2: 'Projectimg2.png',
   // imagesRatio: 1080/1150,
   displacementImage: 'distortion1.png'
 });
@@ -93,10 +93,16 @@ jQuery(window).scroll(function(){
 $('.navbar-text-wrapper a').click(function(event) {
   var id = $(this).attr("href");
   var offset = -50;
+  var time = 0;
+
+  if (id == '.story-body') {time = 2000;}
+  if (id == '.contact-page') {time = 0;}
+  if (id == '.team-body') {time = 3000;}
+
   var target = $(id).offset().top - offset;
   $('html, body').animate({
       scrollTop: target
-  }, 1000);
+  }, time);
   event.preventDefault();
   console.log((id));
 });

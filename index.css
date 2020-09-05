@@ -358,7 +358,7 @@ body{
     width: 500px;
     height: 500px;
     overflow: hidden;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     /* if script not supported*/
     /* background: url(Projectimg1.png);
     background-size: cover;
