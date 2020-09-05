@@ -428,6 +428,10 @@ body{
         line-height: 1.7em;
     }
 
+    .bg-texts-container{
+        top: 20%;
+    }
+
     .bg-text-wrapper{
         font-size: 6em;
         margin-right: 0;
@@ -668,8 +672,8 @@ body{
     }
 
     .profile-img-wrapper{
-        width: 30vw;
-        height: 35vw;
+        width: 25vw;
+        height: 30vw;
         border-radius: 0;
     }
 
@@ -679,7 +683,7 @@ body{
 /* .profile-img-wrapper:focus{
     border-radius: 0%;
 } */
-
+/* 
 #m1{
     top: 0%;
     left: 0%;
@@ -719,7 +723,7 @@ body{
 #m10{
     top: 50%;
     left: 80%;
-}
+} */
 
 #m1 > div{background-image: url(ProfileImages/Darshan.jpg);}
 #m2 > div{background-image: url(ProfileImages/Dheeraj.jpg);}
