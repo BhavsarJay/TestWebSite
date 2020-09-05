@@ -429,7 +429,8 @@ body{
     }
 
     .bg-texts-container{
-        top: 20%;
+        top: 30%;
+        left: 10%;
     }
 
     .bg-text-wrapper{
@@ -971,6 +972,10 @@ textarea:focus{
         margin: 0 -5px;
         box-shadow: none;
         transition: none;
+    }
+
+    .social-media-links-container img:hover{
+        box-shadow: none;
     }
 }
 
