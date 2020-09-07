@@ -505,8 +505,7 @@ body{
     }
 
     .bg-texts-container{
-        top: 30%;
-        left: 10%;
+        top: 32.5%;
     }
 
     .bg-text-wrapper{
@@ -1028,6 +1027,12 @@ textarea:focus{
 
     .form-container > form > label:nth-child(n){
         width: 100%;
+    }
+
+    .form-container > form > button{
+        margin: 0;
+        width: 100%;
+        transform: none;
     }
 
     .social-media-links-container > .img-container{
