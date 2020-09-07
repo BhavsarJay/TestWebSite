@@ -1,7 +1,6 @@
 body{
     margin: 0;
     padding: 0;
-    left: 0;
     background-color: rgb(34, 34, 34);
 }
 
@@ -226,10 +225,8 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 10em;
-    /* top: 8.5vh; */
-    /* left: 50vw; */
-    right: 5vw;
-    top: 4vw;
+    top: 8.5vh;
+    left: 50vw;
 
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #404040;
@@ -251,10 +248,8 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 15em;
-    /* top: 55vh; */
-    /* left: 40vw; */
-    bottom: -2vh;
-    right: -3vw;
+    top: 55vh;
+    left: 40vw;
 
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #404040;
