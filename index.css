@@ -4,14 +4,6 @@ body{
     background-color: rgb(34, 34, 34);
 }
 
-.test{
-    background-color: rgba(165, 42, 42, 0.281);
-    width: 350px;
-    height: 200px;
-    position: absolute;
-    left: 0px;
-}
-
 .home-body{
     height: 100vh;
 }
@@ -870,9 +862,13 @@ body{
     border-radius: 10px;
     border: 1px solid rgb(0, 0, 0, 0.1);
     background-color: rgb(245, 245, 245);
+}
+
+.form-container > form > label > h3{
     font-family: 'Poppins', sans-serif;
     font-size: 0.9em;
     font-weight: bold;
+    margin: 1px;
 }
 
 .form-container > form > label:nth-child(1){
@@ -1022,6 +1018,7 @@ textarea:focus{
 
     .form-container > form > label:nth-child(n){
         width: 100%;
+        margin-bottom: 10px;
     }
 
     .form-container > form > button{
