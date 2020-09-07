@@ -1,7 +1,16 @@
 body{
     margin: 0;
     padding: 0;
+    left: 0;
     background-color: rgb(34, 34, 34);
+}
+
+.test{
+    background-color: rgba(165, 42, 42, 0.281);
+    width: 350px;
+    height: 200px;
+    position: absolute;
+    left: 0px;
 }
 
 .home-body{
@@ -83,7 +92,7 @@ body{
         font-size: 1.2em;
         color: rgb(255, 255, 255);
         margin: 25px 0 0px 10px;
-        background-color: rgb(11, 11, 117);
+        background-color: rgb(47, 47, 71);
         padding: 20px;
     }
 
@@ -104,7 +113,13 @@ body{
         background-color: white;
         margin: 6px 0;
 
-        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        transition: transform 0.4s ease-in-out, 
+                    opacity 0.4s ease-in-out,
+                    background-color 0.4s ease-in-out;
+    }
+
+    .hamburger-menu.cross > div{
+        background-color: black;
     }
 
     .hamburger-menu.cross > div:first-child{
@@ -191,6 +206,7 @@ body{
 .back-text-wrapper{
     position: absolute;
     z-index: -1;
+    width: 100%;
 }
 
 
@@ -249,22 +265,22 @@ body{
         font-size: 10em;
         position: absolute;
         top: 5vh;
-        left: 25vw;
+        left: 0vw;
     }
     #hustle{
         font-size: 5em;
         top: 28vh;
-        right: 0;
+        left: 0px;
     }
     #the2{
         font-size: 10em;
         top: 35vh;
-        left: 25vw;
+        left: 0vw;
     }
     #grind{
-        font-size: 6em;
+        font-size: 6.5em;
         top: 55vh;
-        right: -7vw;
+        left: 0vw;
     }
 }
 
@@ -1024,6 +1040,10 @@ textarea:focus{
         font-family: 'Montserrat', sans-serif;
         font-size: 0.8em;
         font-weight: 500;
+    }
+
+    .social-media-links-container hr{
+        margin: 0;
     }
 
     .social-media-links-container img{

@@ -143,12 +143,12 @@ optionsBtn.click(function(){
 //NavBar links animations FOR MOBILE
 $('.navigation-panel a').click(function(event) {
   var id = $(this).attr("href");
-  var offset = -50;
+  var offset = 0;
   var time = 0;
 
-  if (id == '.story-body') {time = 2000;}
-  if (id == '.contact-page.mobile') {time = 0;}
-  if (id == '.team-body') {time = 3000;}
+  if (id == '.story-body') {time=2000; offset=25;}
+  if (id == '.contact-page.mobile') {time=0; offset=-10;}
+  if (id == '.team-body') {time=3000;}
 
   var target = $(id).offset().top - offset;
   $('html, body').animate({
