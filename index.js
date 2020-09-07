@@ -108,6 +108,67 @@ $('.navbar-text-wrapper a').click(function(event) {
 });
 
 
+
+//Hamburger animations
+optionsBtn = $('.optionsBtn');
+navPanel = $('.navigation-panel');
+var navOpen = false;
+
+optionsBtn.click(function(){
+
+  if(!navOpen){
+
+    // Show the navigation menu
+    console.log('Open Nav');
+    navPanel.removeClass("hide");
+    
+    // Show Cross
+    optionsBtn.children().addClass("cross");
+
+    navOpen = true;
+  }
+  else{
+    // Hide the navigation menu
+    console.log('Close Nav');
+    navPanel.addClass("hide");
+    
+    // Show Hamburger
+    optionsBtn.children().removeClass("cross");
+
+    navOpen = false;
+  }
+
+});
+
+//NavBar links animations FOR MOBILE
+$('.navigation-panel a').click(function(event) {
+  var id = $(this).attr("href");
+  var offset = -50;
+  var time = 0;
+
+  if (id == '.story-body') {time = 2000;}
+  if (id == '.contact-page.mobile') {time = 0;}
+  if (id == '.team-body') {time = 3000;}
+
+  var target = $(id).offset().top - offset;
+  $('html, body').animate({
+      scrollTop: target
+  }, time);
+  event.preventDefault();
+  console.log((id));
+
+
+  // Hide the navigation menu
+  console.log('Close Nav');
+  navPanel.addClass("hide");
+  
+  // Show Hamburger
+  optionsBtn.children().removeClass("cross");
+
+  navOpen = false;
+});
+
+
 // var isScrolling = false;
 // $(document).on('scrollstart', function(){
 //   isScrolling = true;
@@ -124,6 +185,11 @@ function parallaxScroll(scrolled){
   $('.background-text-items').css('top',(0 + (scrolled * 0.5)) + 'px');
   $('.bg-texts-container').css('top',(0 + (scrolled * 0.4)) + 'px');
 }
+
+
+
+
+
 
 var storyImg2 = $('#story-card-2');
 var storyImg1 = $('#story-card-1');
