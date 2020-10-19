@@ -283,6 +283,11 @@ body{
 /*#endregion Background Text Styling  */
 
 /* #region Moto Text Styling */
+
+.moto-container{
+    display: none;
+}
+
 @media screen and (max-width: 425px){
 
     .moto-container{
@@ -296,6 +301,7 @@ body{
         color: white;
     }
 }
+
 /* #endregion Moto Text Styling */
 
 /* #region See-our-work styling */
@@ -678,6 +684,7 @@ body{
     top: 0;
     overflow: hidden;
     height: 100vh;
+    background-image: url(BackgroundSvg/Triangles.svg);
 }
 
 .team-img-container{
@@ -704,20 +711,49 @@ body{
 }
 
 /* Profiles Styling */
-.profiles-container{
+
+.profiles-container.mobile{
+    display: none;
+}
+
+.profiles-container.desktop{
     position: absolute;
     width: 100%;
     height: 100%;
     /* margin: 0 auto; */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     align-items: center;
 }
 
+.profiles-container > .upper-row, .lower-row{
+    display: flex;
+    justify-content: space-around;
+}
 
 /* .profile-container{
     border: 1px solid white;
+    background-color: tomato;
+} */
+
+/* .profile-container:nth-child(2){grid-column: span 2;}
+.profile-container:nth-child(3){grid-column: span 2;}
+.profile-container:nth-child(4){grid-column: span 2;}
+.profile-container:nth-child(1){grid-column: span 2;}
+.profile-container:nth-child(5){grid-column: span 2;}
+.profile-container:nth-child(6){grid-column: span 2;}
+.profile-container:nth-child(7){grid-column: span 1;}
+.profile-container:nth-child(8){grid-column: span 2;}
+.profile-container:nth-child(9){grid-column: span 2;}
+.profile-container:nth-child(10){grid-column: span 2;}
+.profile-container:nth-child(11){grid-column: span 2;}
+.profile-container:nth-child(12){grid-column: span 2;}
+.profile-container:nth-child(13){grid-column: span 1;} */
+
+/* .profile-container:nth-child(-n + 6){
+    height: 50%;
+    grid-column: span 2;
 } */
 
 .profile-img-wrapper{
@@ -727,35 +763,51 @@ body{
     padding: 0px;
     box-sizing: border-box;
     border-radius: 50%;
+    border: 7px solid white;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    
+    background-color: rgb(191, 191, 191);
 }
 
 @media screen and (max-width: 425px){
 
     .team-page{
-        height: 120vh;
+        height: 140vh;
     }
 
     .team-page-content{
         position: initial;
         overflow: initial;
+
+        background-image: none;
     }
 
     .team-img-container{
         display: none;
     }
 
-    .profiles-container{
+    .profiles-container.desktop{
+        display: none;
+    }
+
+    .profiles-container.mobile{
+        padding: 0 20px;
+        box-sizing: border-box;
+        display: grid;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+        row-gap: 25px;
     }
 
     .profile-img-wrapper{
-        width: 25vw;
+        width: 30vw;
         height: 30vw;
-        border-radius: 0;
+        border-radius: 50%;
+        border: none;
+
+        border: 5px solid white;
     }
 
 
@@ -764,58 +816,33 @@ body{
 /* .profile-img-wrapper:focus{
     border-radius: 0%;
 } */
-/* 
-#m1{
-    top: 0%;
-    left: 0%;
-}
-#m2{
-    top: 0px;
-    left: 20%;
-}
-#m3{
-    top: 0%;
-    left: 40%;
-}
-#m4{
-    top: 0%;
-    left: 60%;
-}
-#m5{
-    top: 0%;
-    left: 80%;
-}
-#m6{
-    top: 50%;
-    left: 0%;
-}
-#m7{
-    top: 50%;
-    left: 20%;
-}
-#m8{
-    top: 50%;
-    left: 40%;
-}
-#m9{
-    top: 50%;
-    left: 60%;
-}
-#m10{
-    top: 50%;
-    left: 80%;
-} */
 
-#m1 > div{background-image: url(ProfileImages/Darshan.jpg);}
-#m2 > div{background-image: url(ProfileImages/Dheeraj.jpg);}
-#m3 > div{background-image: url(ProfileImages/Mihika.jpg);}
-#m4 > div{background-image: url(ProfileImages/Jayk.jpg);}
-#m5 > div{background-image: url(ProfileImages/Meet.jpg)}
-#m6 > div{background-image: url(ProfileImages/Jayb.jpg)}
-#m7 > div{background-image: url(ProfileImages/Parth.jpg);}
-#m8 > div{background-image: url(ProfileImages/Rohit.jpg)}
-#m9 > div{background-image: url(ProfileImages/Shyren.jpg)}
-#m10 > div{background-image: url(ProfileImages/Varun.jpg)}
+#m1 > div{background-image: url(ProfileImages/Darshan.png);}
+#m2 > div{background-image: url(ProfileImages/Dheeraj.png);}
+#m3 > div{background-image: url(ProfileImages/Mihika.png);}
+#m4 > div{
+    background-image: url(ProfileImages/Parinda.png);
+    background-position: center top;
+}
+#m5 > div{background-image: url(ProfileImages/Meet.png);}
+#m6 > div{
+    background-image: url(ProfileImages/Jayb.png);
+    background-position: center top;
+    background-size: cover;
+}
+#m7 > div{background-image: url(ProfileImages/Jayk.png);}
+#m8 > div{background-image: url(ProfileImages/Parth.png);}
+#m9 > div{background-image: url(ProfileImages/Rohit.png);}
+#m10 > div{
+    background-image: url(ProfileImages/Shyren.png);
+    background-position: center top;
+    background-size: contain;
+}
+#m11 > div{
+    background-image: url(ProfileImages/Varun.png);
+    background-position: center top;
+    background-size: contain;
+}
 
 /* #endregion*/
 
@@ -1010,7 +1037,8 @@ textarea:focus{
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         white-space: nowrap;
-        margin: 0;
+        width: fit-content;
+        margin: 0 auto;
     }
 
     .content-container > .img-wrapper > p{
