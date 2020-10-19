@@ -5,7 +5,7 @@ body{
 }
 
 .home-body{
-    height: 100vh;
+    height: 65vh;
 }
 
 /* #region NavBar styling */
@@ -250,14 +250,14 @@ body{
 @media screen and (max-width: 425px){
     #the1{
         font-size: 10em;
-        position: absolute;
         top: 5vh;
         left: 0vw;
     }
     #hustle{
         font-size: 5em;
-        top: 28vh;
-        left: 0px;
+        top: 27vh;
+        left: unset;
+        right: -20%;
     }
     #the2{
         font-size: 10em;
@@ -267,7 +267,8 @@ body{
     #grind{
         font-size: 6.5em;
         top: 55vh;
-        left: 0vw;
+        left: unset;
+        right: -20%;
     }
 }
 
@@ -280,6 +281,22 @@ body{
 }
 
 /*#endregion Background Text Styling  */
+
+/* #region Moto Text Styling */
+@media screen and (max-width: 425px){
+
+    .moto-container{
+        margin: 20% 30px;
+        width: fit-content;
+        /* transform: translateX(-30%); */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.7em;
+        line-height: 0.6em;
+        /* text-align: center; */
+        color: white;
+    }
+}
+/* #endregion Moto Text Styling */
 
 /* #region See-our-work styling */
 .see-our-work{
@@ -492,12 +509,13 @@ body{
     }
 
     .bg-texts-container{
-        top: 32.5%;
+        top: 36%;
     }
 
     .bg-text-wrapper{
         font-size: 6em;
         margin-right: 0;
+        line-height: 1em;
     }
 }
 
