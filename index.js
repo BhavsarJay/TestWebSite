@@ -79,8 +79,10 @@ jQuery(window).scroll(function(){
 
   _Xval = Number(matches[1]);
   // console.log(matches[0])
-  if(_Xval < -30000){
+  // if(_Xval < -30000){
+  if(_Xval < -20000){
     codevengers_SVG.css('visibility', 'hidden');
+    codevengers_SVG.css('width', '0px')
     // console.log('hide');
   }
   else{
@@ -337,3 +339,185 @@ function closeCard(cardIndex){
   console.log('reverse');
   openStory = -1;
 }
+
+
+initialColor = "#bababa";
+selectionColor = "#4ecdc4";
+selectionColor = "#f72585";
+selectionColor = "#80b918";
+selectionColor = "#ffba08";
+selectionColor = "#eeef20";
+selectionColor = "rgb(255, 255, 0)";
+var isDetailsOpen = false;
+var openDetailsCard;
+var imgWrappers = $('.profiles-container .profile-container');
+
+if (isDetailsOpen == false){
+  $('.profile-img-wrapper').hover(
+    function() {
+      if (isDetailsOpen == false){
+        hoverin($(this))
+      }
+    }, 
+    function() {
+      hoverout($(this))
+    });                  
+}                                    
+
+function hoverin(element) {
+  element.css({
+    "background-color" : selectionColor,
+    "border" : "15px solid white"
+  })
+}
+
+function hoverout(element) {
+  element.css({
+    "background-color" : initialColor,
+    "border" : "7px solid white"
+  })
+}
+
+
+
+$('.profile-img-wrapper').mousedown(function() {
+  // console.log($(this));
+  
+  if(isDetailsOpen == false){
+    var target = $(this).get(0);
+    anime({
+      targets: target,
+      scale: 0.9,
+      duration: 100,
+      easing: 'linear'
+    });
+  }
+
+});
+
+$('.profile-img-wrapper').mouseup(function() {
+  // console.log($(this));
+    if(isDetailsOpen == false){
+    {
+      var target = $(this).get(0);
+      anime({
+        targets: target,
+        scale: 1,
+        duration: 300,
+        // easing: 'linear'
+      });
+    }
+  }
+});
+
+
+// $('.profiles-container, .profile-img-wrapper').click(function() {
+  
+//   //Hide the Card if visible
+//   console.log($(this));
+//   if(isDetailsOpen){
+    
+//     imgWrappers.each(function(index, value){
+//       $(this).children().eq(0).css({'filter' : 'blur(0)'});
+//     });
+
+//     hideDetailsCard(openDetailsCard);
+//     console.log("Clicked Outside");
+//   }
+// });
+
+$(document).mouseup(e => {
+  // if the target of the click isn't the container...
+  const $card = $('.details-container').find('*');
+
+  if (!$card.is(e.target) && !$('.details-container').is(e.target) ){
+    //Hide the Card if visible
+    // console.log($(this));
+    if(isDetailsOpen){
+      
+      imgWrappers.each(function(index, value){
+        $(this).children().eq(0).css({'filter' : 'blur(0)'});
+      });
+
+      hideDetailsCard(openDetailsCard);
+      // console.log("Clicked Outside");
+    }
+  }
+});
+
+jQuery(window).scroll(function(){
+  if(isDetailsOpen){
+    hideDetailsCard(openDetailsCard);
+
+    imgWrappers.each(function(index, value){
+      $(this).children().eq(0).css({'filter' : 'blur(0)'});
+    });
+  }
+});
+
+// var imgWrappers = $('.profiles-container.desktop .profile-img-wrapper')
+// console.log(imgWrappers[0])
+$('.profile-img-wrapper').click(function () {
+  // var selectedId = element.parent().attr('id');
+  // console.log(selectedId);
+  // var imgWrappers = $('.profiles-container.desktop .profile-container').not("#" + selectedId);
+
+  // console.log(imgWrappers);
+  if(isDetailsOpen == false){
+    imgWrappers.each(function(index, value){
+      $(this).children().eq(0).css({'filter' : 'blur(5px)'});
+    });
+
+    showDetailsCard($(this));
+  }
+});
+
+
+function hideDetailsCard(element) {
+  anime({
+    targets: element[0],
+    opacity: 0,
+    translateX: {
+      value: ['-50%'],
+      duration: 0
+    },
+    translateY: {
+      value: ['-50%', '-49%']
+    },
+    duration: 200,
+    easing: 'easeOutCubic',
+    begin: function (anim) {
+      isDetailsOpen = true;
+    },
+    complete: function (anim) {
+      element.css({ 'display': 'none' });
+      isDetailsOpen = false
+    }
+  });
+}
+
+
+function showDetailsCard(element) {
+  var details = element.siblings();
+  openDetailsCard = details;
+  
+  details.css({ 'display': 'flex' });
+
+  anime({
+    targets: details[0],
+    opacity: 1,
+    translateX: {
+      value: ['-50%'],
+      duration: 0
+    },
+    translateY: {
+      value: ['-48%', '-50%']
+    },
+    duration: 200,
+    easing: 'easeOutCubic',
+    begin: function (anim) {
+      isDetailsOpen = true;
+    }
+  });
+}
+

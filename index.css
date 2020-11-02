@@ -692,13 +692,15 @@ body{
     width: calc(100vw - 17px);
     height: 100vh;
     overflow: hidden;
-    z-index: 1;
+    z-index: 2;
     /* background-color: rgba(255, 255, 255, 0.801); */
+    pointer-events: none;
 }
 
 .team-img-container > .img-wrapper{
     position: relative;
     top: 50vh;
+    pointer-events: none;
 }
 
 .team-img-container > .img-wrapper > img{
@@ -730,12 +732,15 @@ body{
 .profiles-container > .upper-row, .lower-row{
     display: flex;
     justify-content: space-around;
+    /* height: 15vw; */
 }
 
-/* .profile-container{
-    border: 1px solid white;
-    background-color: tomato;
-} */
+.profile-container{
+    width: 15vw;
+    height: 15vw;
+    /* border: 1px solid white; */
+    /* background-color: tomato; */
+}
 
 /* .profile-container:nth-child(2){grid-column: span 2;}
 .profile-container:nth-child(3){grid-column: span 2;}
@@ -761,20 +766,151 @@ body{
     height: 15vw;
     margin: 0 auto;
     padding: 0px;
+    position: absolute;
+
     box-sizing: border-box;
     border-radius: 50%;
     border: 7px solid white;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    
-    background-color: rgb(191, 191, 191);
+
+    /* Dont like this color but still makes sense to use */
+    background-color: #bababa;
+    /* Like this color but...*/
+    /* background-color: rgb(255, 251, 0); */
+    transition: border 0.2s ease-in-out, 
+                background-color 0.2s ease-in-out,
+                filter 0.5s ease-in-out;
 }
+
+.details-container{
+    width: 30vw;
+    height: 85vh;
+    padding: 60px 0;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+
+    border-radius: 5px;
+    color: white;
+    background-color: #1f2124;
+    background-color: #2e0764;
+    display: flex;
+    flex-direction: column;
+    
+    z-index: 1;
+    display: none;
+    opacity: 0;
+}
+
+.details-container > .photo{
+    width: 15vw;
+    height: 15vw;
+    margin: 0 auto;
+    padding: 0px;
+    /* position: absolute; */
+
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 7px solid white;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
+}
+
+.details-container > .name{
+    width: fit-content;
+    margin: 0 auto;
+    /* line-height: 1em; */
+
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 1.4em;
+}
+
+.details-container > .title{
+    width: fit-content;
+    margin: 0 auto;
+    line-height: 1em;
+
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 1.0em;
+}
+
+
+.details-container > .description{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 50px;
+    /* line-height: 1em; */
+    flex-grow: 1;
+    
+    /* To center the text inside this element */
+    display: flex;
+    align-items: center;
+    
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 1.0em;
+}
+
+.details-container > .links{
+    width: fit-content;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.details-container > .links > a{
+    width: 25px;
+    margin: 0 15px;
+}
+
+/* To invert Github */
+.details-container > .links > a:first-child{
+    filter: invert(1);
+    font-size: 1.6em;
+}
+
+
+
+#m1 .profile-img-wrapper,#m1 .details-container .photo{background-image: url(ProfileImages/Darshan.png);}
+#m2 .profile-img-wrapper,#m2 .details-container .photo{background-image: url(ProfileImages/Dheeraj.png);}
+#m3 .profile-img-wrapper,#m3 .details-container .photo{background-image: url(ProfileImages/Mihika.png);}
+#m4 .profile-img-wrapper,#m4 .details-container .photo{
+    background-image: url(ProfileImages/Parinda.png);
+    background-position: center top;
+}
+#m5 .profile-img-wrapper,#m5 .details-container .photo{background-image: url(ProfileImages/Meet.png);}
+#m6 .profile-img-wrapper,#m6 .details-container .photo{
+    background-image: url(ProfileImages/Jayb.png);
+    background-position: center top;
+    background-size: cover;
+}
+#m7 .profile-img-wrapper,#m7 .details-container .photo{background-image: url(ProfileImages/Jayk.png);}
+#m8 .profile-img-wrapper,#m8 .details-container .photo{background-image: url(ProfileImages/Parth.png);}
+#m9 .profile-img-wrapper,#m9 .details-container .photo{background-image: url(ProfileImages/Rohit.png);}
+#m10 .profile-img-wrapper,#m10 .details-container .photo{
+    background-image: url(ProfileImages/Shyren.png);
+    background-position: center top;
+    background-size: contain;
+}
+#m11 .profile-img-wrapper,#m11 .details-container .photo{
+    background-image: url(ProfileImages/Varun.png);
+    background-position: center top;
+    background-size: contain;
+}
+
 
 @media screen and (max-width: 425px){
 
     .team-page{
-        height: 140vh;
+        height: 120vh;
     }
 
     .team-page-content{
@@ -793,12 +929,26 @@ body{
     }
 
     .profiles-container.mobile{
+        /* position: relative; */
         padding: 0 20px;
         box-sizing: border-box;
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr;
         row-gap: 25px;
+        justify-items: center;
+    }
+
+    .profiles-container.mobile > .profile-container{
+        width: 30vw;
+        height: 30vw;
+        /* border: 1px solid white; */
+    }
+
+    .profiles-container.mobile  .details-container{
+        width: 90vw;
+        height: 60vh;
+        position: fixed;
     }
 
     .profile-img-wrapper{
@@ -810,39 +960,22 @@ body{
         border: 5px solid white;
     }
 
+    #m3 .profile-img-wrapper,#m3 .details-container .photo{background-image: url(ProfileImages/Meet.png);}
+    #m4 .profile-img-wrapper,#m4 .details-container .photo{background-image: url(ProfileImages/Jayb.png);}
+    #m5 .profile-img-wrapper,#m5 .details-container .photo{background-image: url(ProfileImages/Mihika.png);}
+    #m6 .profile-img-wrapper,#m6 .details-container .photo{background-image: url(ProfileImages/Parinda.png);}
+
+    
+    /* Varun span 2 columns */
+    .profiles-container.mobile > .profile-container:last-child{
+        grid-column: span 2;
+    }
 
 }
 
 /* .profile-img-wrapper:focus{
     border-radius: 0%;
 } */
-
-#m1 > div{background-image: url(ProfileImages/Darshan.png);}
-#m2 > div{background-image: url(ProfileImages/Dheeraj.png);}
-#m3 > div{background-image: url(ProfileImages/Mihika.png);}
-#m4 > div{
-    background-image: url(ProfileImages/Parinda.png);
-    background-position: center top;
-}
-#m5 > div{background-image: url(ProfileImages/Meet.png);}
-#m6 > div{
-    background-image: url(ProfileImages/Jayb.png);
-    background-position: center top;
-    background-size: cover;
-}
-#m7 > div{background-image: url(ProfileImages/Jayk.png);}
-#m8 > div{background-image: url(ProfileImages/Parth.png);}
-#m9 > div{background-image: url(ProfileImages/Rohit.png);}
-#m10 > div{
-    background-image: url(ProfileImages/Shyren.png);
-    background-position: center top;
-    background-size: contain;
-}
-#m11 > div{
-    background-image: url(ProfileImages/Varun.png);
-    background-position: center top;
-    background-size: contain;
-}
 
 /* #endregion*/
 
@@ -955,13 +1088,25 @@ textarea:focus{
     margin-left: 50%;
     transform: translate(-50%);
     height: 50px;
-    width: 200px;
-    border-radius: 50px;
+    width: fit-content;
+    border-radius: 4px;
+    padding: 0 30px;
+    box-sizing: border-box;
+
     font-size: 1.4em;
     font-family: 'Montserrat';
     border: none;
+    outline: none;
     color: #ffffff;
     background-color: rgb(66, 66, 66);
+    background-color: #1a40e8;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 
+                0 3px 1px -2px rgba(0, 0, 0, 0.3), 
+                0 1px 5px 0 rgba(0, 0, 0, 0.4);
+}
+
+.form-container > form > button:hover{
+    background-color: #1a50e8;
 }
 
 .contact-page> .content-container> .img-container{
@@ -1073,6 +1218,10 @@ textarea:focus{
         transform: none;
     }
 
+    .form-container > form > button:hover{
+        background-color: rgb(55, 55, 55);
+    }
+
     .social-media-links-container > .img-container{
         display: flex;
         align-items: center;
@@ -1087,6 +1236,7 @@ textarea:focus{
 
     .social-media-links-container hr{
         margin: 0;
+        border-top: 1px solid rgb(140, 140, 140);
     }
 
     .social-media-links-container img{
