@@ -65,7 +65,7 @@ body{
         /* mix-blend-mode: exclusion; */
         left: 40%;
         transition: left 0.4s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-        
+
         z-index: 1;
     }
     .navigation-panel.hide{
@@ -104,7 +104,7 @@ body{
         background-color: white;
         margin: 6px 0;
 
-        transition: transform 0.4s ease-in-out, 
+        transition: transform 0.4s ease-in-out,
                     opacity 0.4s ease-in-out,
                     background-color 0.4s ease-in-out;
     }
@@ -273,7 +273,7 @@ body{
 }
 
 @media screen and (min-width: 1500px){
-    
+
     #the1{font-size: 16em;}
     #hustle{font-size: 11em;}
     #the2{font-size: 19.5em;}
@@ -353,7 +353,7 @@ body{
 }
 
 @media screen and (min-width: 1500px){
-    
+
     .see-our-work > .heading-text-wrapper a{
         font-size: 2.5em;
     }
@@ -441,16 +441,16 @@ body{
     /*half of Screen height - the half of height of the image conatiner */
     top: calc(50vh - 250px);
 }
-  
+
 .distortion {
-    width: 500px;
     height: 500px;
+    width: 500px;
     overflow: hidden;
     background-color: lightblue;
     /* if script not supported*/
-    /* background: url(Projectimg1.png); */
+    /* background: url(Projectimg1.png);
     background-size: cover;
-    background-position:center;
+    background-position: center; */
 }
 
 .grid-wrapper.mobile{
@@ -617,7 +617,7 @@ body{
     .main-container{
         margin-top: 150px;
         margin-bottom: 150px;
-        display: block;   
+        display: block;
     }
 
     .card-container{
@@ -779,7 +779,7 @@ body{
     background-color: #bababa;
     /* Like this color but...*/
     /* background-color: rgb(255, 251, 0); */
-    transition: border 0.2s ease-in-out, 
+    transition: border 0.2s ease-in-out,
                 background-color 0.2s ease-in-out,
                 filter 0.5s ease-in-out;
 }
@@ -790,7 +790,7 @@ body{
     padding: 60px 0;
     box-sizing: border-box;
     position: absolute;
-    top: 50%; left: 50%; 
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
 
     border-radius: 5px;
@@ -799,7 +799,7 @@ body{
     background-color: #2e0764;
     display: flex;
     flex-direction: column;
-    
+
     z-index: 1;
     display: none;
     opacity: 0;
@@ -848,11 +848,11 @@ body{
     padding: 0 50px;
     /* line-height: 1em; */
     flex-grow: 1;
-    
+
     /* To center the text inside this element */
     display: flex;
     align-items: center;
-    
+
     text-align: center;
     font-family: 'Poppins';
     font-weight: 300;
@@ -976,7 +976,7 @@ body{
     #m5 .profile-img-wrapper,#m5 .details-container .photo{background-image: url(ProfileImages/Mihika.png);}
     #m6 .profile-img-wrapper,#m6 .details-container .photo{background-image: url(ProfileImages/Parinda.png);}
 
-    
+
     /* Varun span 2 columns */
     .profiles-container.mobile > .profile-container:last-child{
         grid-column: span 2;
@@ -1111,8 +1111,8 @@ textarea:focus{
     color: #ffffff;
     background-color: rgb(66, 66, 66);
     background-color: #1a40e8;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 
-                0 3px 1px -2px rgba(0, 0, 0, 0.3), 
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3),
+                0 3px 1px -2px rgba(0, 0, 0, 0.3),
                 0 1px 5px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -1201,7 +1201,7 @@ textarea:focus{
         font-size: 1em;
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
-        position: absolute;        
+        position: absolute;
         left: 18vw;
     }
 

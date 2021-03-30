@@ -31,7 +31,7 @@ var myAnimation = new hoverEffect({
   hover: false,
   image1: 'Projectimg1.png',
   image2: 'Projectimg2.png',
-  // imagesRatio: 1080/1150,
+  imagesRatio: 500/650,
   displacementImage: 'distortion1.png'
 });
 
