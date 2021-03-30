@@ -448,9 +448,9 @@ body{
     overflow: hidden;
     background-color: lightblue;
     /* if script not supported*/
-    /* background: url(Projectimg1.png);
+    /* background: url(Projectimg1.png); */
     background-size: cover;
-    background-position:center; */
+    background-position:center;
 }
 
 .grid-wrapper.mobile{
