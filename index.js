@@ -91,6 +91,11 @@ jQuery(window).scroll(function(){
   }
 });
 
+$('.project-image-wrapper').click(function(event) {
+  if(imgIndex == 1) {window.location.href = "https://www.youtube.com/";}
+  if(imgIndex == 2) {window.location.href = "https://www.youtube.com/";}
+});
+
 //NavBar links animations
 $('.navbar-text-wrapper a').click(function(event) {
   var id = $(this).attr("href");

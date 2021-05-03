@@ -787,7 +787,7 @@ body{
 .details-container{
     width: 30vw;
     height: 85vh;
-    padding: 60px 0;
+    padding: 20px 0;
     box-sizing: border-box;
     position: absolute;
     top: 50%; left: 50%;
